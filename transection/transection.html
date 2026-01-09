@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction</title>
+    <link rel="stylesheet" href="transection.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <h2 class="head">₹ Transactions</h2>
+        <h5 class="subHead">Track your income and expenses</h5>
+        <div class="container">
+            <div class="incExpAddContainer card">
+                <button class="btn" id="addExpBtn">Add Expense</button>
+                <button class="btn" id="addIncBtn">Add Income</button>
+            </div>
+            <div class="addAmt card">
+                <form>
+                    <div class="formGroup">
+                        <div class="formInp">
+                            <label for="amount">Amount</label>
+                            <input type="number" id="amount" name="amount" placeholder="Enter Amount" required>
+                        </div>
+                        <div class="formInp" id="addExp">
+                            <label for="category">Category</label>
+                            <select id="category" name="category" required>
+                                <option value="" disabled selected>Select category</option>
+                                <option value="food">Food</option>
+                                <option value="entertainment">Entertainment</option>
+                                <option value="utilities">Utilities</option>
+                                <option value="others">Others</option>
+                            </select>
+                        </div>
+                        <div class="formInp" id="addInc" style="display: none;">
+                            <label for="category">Category</label>
+                            <select id="category" name="category" required>
+                                <option value="" disabled selected>Select category</option>
+                                <option value="Salary">Salary</option>
+                                <option value="Freelancing">Freelancing</option>
+                            </select>
+                        </div>
+                        <div class="formInp">
+                            <label for="date">Date</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        <div class="formInp">
+                            <label for="description">Description(optional)</label>
+                            <input type="text" id="description" name="description" placeholder="Enter Description">
+                        </div>
+                        <div class="formInp formBtnContainer">
+                            <button type="submit">+ Add Expense</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="seeTrans card">
+                <div class="seeHead">
+                    <h3>All Transactions</h3>
+                    <button class="expBtn"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                            width="24px" fill="#000000">
+                            <path
+                                d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z" />
+                        </svg>Export CSV</button>
+                </div>
+                <div class="seeTransCardContainer">
+                    <div class="seeTransCard">
+                        <div class="scard">
+                            <div class="scardP1 scardP">
+                                <div class="sCat">Salary</div>
+                                <div class="sdate">2023-10-01</div>
+                                <div class="snote"></div>
+                            </div>
+                            <div class="scardP2 scardP">
+                                <div class="sAmt">- $3000</div>
+                                <div class="seeIncExp sexpense">expense</div>
+                            </div>
+                        </div>
+                        <div class="scard">
+                            <div class="scardP1 scardP">
+                                <div class="sCat">Salary</div>
+                                <div class="sdate">2023-10-01</div>
+                                <div class="snote"></div>
+                            </div>
+                            <div class="scardP2 scardP">
+                                <div class="sAmt income">+ $3000</div>
+                                <div class="seeIncExp sincome">income</div>
+                            </div>
+                        </div>
+                        <div class="scard">
+                            <div class="scardP1 scardP">
+                                <div class="sCat">Salary</div>
+                                <div class="sdate">2023-10-01</div>
+                                <div class="snote"></div>
+                            </div>
+                            <div class="scardP2 scardP">
+                                <div class="sAmt income">+ $3000</div>
+                                <div class="seeIncExp sincome">income</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
