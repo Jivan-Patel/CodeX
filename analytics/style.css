@@ -98,8 +98,6 @@ body {
 }
 
 .graph_and_chart{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
 }
 .graph_and_chart .card{
     display: flex;
@@ -117,7 +115,7 @@ body {
 }
 
 .graph_and_chart .card .chart_cont{
-    align-self: center;
+    display: flex;
 
     width: 90%;
 }
