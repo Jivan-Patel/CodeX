@@ -57,9 +57,9 @@ var data = [];
 
 function fetchData() {
     data = JSON.parse(localStorage.getItem('transactions')) || [];
-    data.forEach(obj => {
-        displayTrans(obj);
-    });
+    for(let i = data.length - 1; i >=0 ;i--) {
+        displayTrans(data[i]);
+    }
 }
 function displayTrans(obj) {
     let div = document.createElement('div');
@@ -73,7 +73,7 @@ function displayTrans(obj) {
                         <div class="sAmt">${(obj.incExp=='expense')? '-' : "+"}${obj.amount}</div>
                         <div class="seeIncExp s${obj.incExp}">${obj.incExp}</div>
                     </div>`
-    seeTransCardDisplay.appendChild(div);
+    seeTransCardDisplay.prepend(div);
 }
 function setData(newData) {
     console.log('setDataCalled');
