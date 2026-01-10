@@ -18,9 +18,15 @@ function fetchData() {
         initialBalance = Number(prompt("Enter Initial Balance"));
         localStorage.setItem('initialBalance', initialBalance);
     }
-    
+    if (data.length===0) { 
+        seeTransCardDisplay.innerHTML = 'No data Added Yet';
+    }
+    else {
+        seeTransCardDisplay.innerHTML = '';
+    }
 
-    
+
+
     for (obj of data) {
         if (obj.incExp == 'expense') {
             totalExp += Number(obj.amount);
@@ -29,9 +35,9 @@ function fetchData() {
             totalInc += Number(obj.amount);
         }
     }
-    
+
     for (let i = data.length - 1; i > data.length - 1 - 5; i--) {
-        if(i < 0) break;
+        if (i < 0) break;
         displayTrans(data[i]);
     }
 
@@ -45,7 +51,7 @@ function fetchData() {
 
     console.log(lastMonthData);
     for (dta of lastMonthData) {
-        
+
         if (dta.incExp === 'expense') {
             monthExp += Number(dta.amount);
         }
@@ -62,7 +68,7 @@ function displayTrans(obj) {
     let div = document.createElement('div');
     div.classList.add('scard');
     console.log(obj.catagory);
-    
+
     div.innerHTML = `<div class="scardP1 scardP">
                         <div class="sCat">${obj.catagory}</div>
                         <div class="sdate">${obj.date}</div>
@@ -74,7 +80,7 @@ function displayTrans(obj) {
                     </div>`;
     seeTransCardDisplay.appendChild(div);
 
-    
+
 }
 
 function recentTrans() {
