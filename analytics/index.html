@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main_container">
+        <div class="analitics">
+            <div class="title">Analistics</div>
+            <div class="des">Visualizeyour spending patterns</div>
+        </div>
+        <div class="three_cards">
+            <div class="card">
+<div class="glow-icon">
+        <i class="ri-wallet-3-line"></i>
+    </div>                <div class="des_and_price">
+                    <div class="des">Avg Monthly Spend</div>
+                    <div class="price">₹21,509</div>
+                </div>
+            </div>
+            <div class="card">
+<div class="glow-icon">
+    <i class="ri-disc-line"></i>
+</div>    
+            <div class="des_and_price">
+                    <div class="des">Top Category</div>
+                    <div class="cata_title">Bills</div>
+                    <div class="cata_price">₹21,500</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="glow-icon">
+<i class="ri-line-chart-line"></i>
+</div>
+                <div class="des_and_price">
+                    <div class="des">Saving Rate</div>
+                    <div class="rate">63%</div>
+                </div>
+            </div>
+        </div>
+        <div class="graph_and_chart">
+            <div class="card">
+                <div class="title">Spending By Category</div>
+                <div class="chart_cont">
+                    <canvas id="pie_chart"></canvas>
+                </div>
+            </div>
+            <div class="card">
+                <div class="title">Monthly Trend</div>
+                <div class="graph_cont">
+                    <canvas id="line_graph"></canvas>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
