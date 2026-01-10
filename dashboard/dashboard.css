@@ -1,3 +1,14 @@
+:root {
+    --bg-color: rgb(31, 20, 54);
+    --card-bg: rgb(43, 32, 64);
+    --primary-btn: rgb(110, 73, 238);
+    --red-btn: rgb(242, 62, 87);
+    --green-btn: rgb(28, 190, 102);
+    --other-color: #b0a8d3;
+    --boxShadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -10,8 +21,16 @@ body {
     color: #ffffff;
     display: flex;
     justify-content: center;
-    padding: 40px 20px;
+    padding: 40px 0px;
     min-height: 100vh;
+}
+
+
+main {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .dashboard-container {
@@ -45,13 +64,12 @@ body {
 }
 
 .stat-card {
-    background-color: rgb(41, 33, 64);
+    background-color: var(--card-bg);
     border-radius: 16px;
     padding: 24px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 160px;
     position: relative;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
@@ -76,24 +94,30 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 20px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
 }
 
-.icon-green { 
-    background-color: #059669; 
+.icon-green {
+    background-color: #059669;
     color: white;
- }
-.icon-purple { 
-    background-color: #7c3aed; 
-    color: white; 
 }
-.icon-orange { 
-    background-color: #ea580c; 
+
+.icon-purple {
+    background-color: #7c3aed;
     color: white;
- }
-.icon-teal { 
+}
+
+.icon-orange {
+    background-color: #ea580c;
+    color: white;
+}
+
+.icon-teal {
     background-color: #0d9488;
-     color: white;
-     }
+    color: white;
+}
 
 .card-value {
     font-size: 28px;
@@ -103,10 +127,6 @@ body {
     align-items: center;
     gap: 8px;
 }
-
-.arrow { font-size: 14px; font-weight: 400; }
-.arrow.up { color: #10b981; }
-.arrow.down { color: #f59e0b; }
 
 .card-subtext {
     color: #8b8e99;
@@ -121,7 +141,7 @@ body {
     background-color: rgb(42, 33, 64);
     border-radius: 16px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    padding-bottom: 20px; 
+    padding-bottom: 20px;
 }
 
 .section-header {
@@ -133,7 +153,7 @@ body {
     align-items: center;
     background-color: rgb(42, 33, 64);
     margin: auto;
-    border-bottom: 1px solid rgba(255,255,255,0.05); 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     margin-bottom: 15px;
 }
 
@@ -171,7 +191,7 @@ body {
     width: 94%;
     height: auto;
     margin: auto;
-    padding: 15px 15px; 
+    padding: 15px 15px;
     display: flex;
     align-items: center;
     border-radius: 12px;
@@ -206,15 +226,16 @@ body {
     justify-content: center;
     font-size: 20px;
     color: #a78bfa;
-    flex-shrink: 0; /* Prevents icon from shrinking on small screens */
+    flex-shrink: 0;
 }
 
-.t-icon.food { 
+.t-icon.food {
     color: #f472b6;
- }
-.t-icon.travel { 
+}
+
+.t-icon.travel {
     color: #3b82f6;
- } 
+}
 
 .t-details {
     display: flex;
@@ -246,11 +267,12 @@ body {
     font-weight: 700;
 }
 
-.amount-green { 
+.amount-green {
     color: #10b981;
- }
-.amount-white { 
-    color: #ffffff; 
+}
+
+.amount-white {
+    color: #ffffff;
 }
 
 .t-badge {
@@ -277,51 +299,16 @@ body {
 }
 
 
-
-@media (max-width: 768px) {
-    body {
-        padding: 20px 10px;
-    }
-
-    .header h1 {
-        font-size: 22px;
-    }
-    .stats-grid {
-        grid-template-columns: 1fr;
-    }
-    .stat-card {
-        height: 140px;
-        padding: 20px;
-    }
-
-    .card-value {
-        font-size: 24px;
-    }
-
-    .section-header {
-        padding: 20px 0;
-    }
-
-    .transaction-item {
-        padding: 12px;
-    }
-
-    .t-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 18px;
-    }
-}
-  /* On very small screens, keep row but ensure spacing */
+/* On very small screens, keep row but ensure spacing */
 @media (max-width: 480px) {
     .item_manage {
         gap: 10px;
     }
-    
+
     .t-title {
         font-size: 14px;
     }
-    
+
     .t-date {
         font-size: 11px;
         max-width: 120px;
@@ -329,8 +316,134 @@ body {
         overflow: hidden;
         text-overflow: ellipsis;
     }
-    
+
     .t-amount {
         font-size: 14px;
     }
+}
+
+
+
+
+
+.seeHead {
+    display: flex;
+    justify-content: space-between
+}
+
+
+.seeTransCardContainer {
+    margin-top: 20px;
+}
+
+.seeTransCard {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+/* Single transaction card */
+.scard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 18px;
+    border-radius: 14px;
+    position: relative;
+
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.06),
+            rgba(255, 255, 255, 0.02));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.scard:hover {
+    transform: translateY(-2px);
+}
+
+/* Left side */
+.scardP1 {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.deleteBtn {
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    position: absolute;
+    top: 7px;
+    right: 7px;
+}
+
+.sCat {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.sdate {
+    font-size: 13px;
+    color: #b8b8c7;
+}
+
+.snote {
+    font-size: 12px;
+    color: #9a9ab0;
+}
+
+/* Right side */
+.scardP2 {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sAmt {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.sAmt.income {
+    color: #2bd576;
+}
+
+.sAmt.expense {
+    color: #ff5c5c;
+}
+
+.seeIncExp {
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    width: fit-content;
+    margin-left: auto;
+    text-transform: capitalize;
+
+}
+
+.sincome {
+    background: linear-gradient(135deg,
+            rgba(46, 213, 115, 0.25),
+            rgba(46, 213, 115, 0.15));
+    border-color: rgba(46, 213, 115, 0.4);
+    color: #2bd576;
+}
+
+.sexpense {
+    background: linear-gradient(135deg,
+            rgba(255, 92, 92, 0.25),
+            rgba(255, 92, 92, 0.15));
+    border-color: rgba(255, 92, 92, 0.4);
+    color: #ff5c5c;
 }
