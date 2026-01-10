@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        
+        <header class="header">
+            <h1>Welcome back! 👋</h1>
+            <p>Here's your financial overview for January 2026</p>
+        </header>
+   <section class="stats-grid">
+            <div class="stat-card">
+                <div class="card-top">
+                    <span class="card-label">Balance</span>
+                    <div class="icon-box icon-green">
+                        <i class="ri-wallet-3-line"></i>
+                    </div>
+                </div>
+                <div class="card-value">
+                    ₹110,472 <span class="arrow up">↗</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="card-top">
+                    <span class="card-label">Income</span>
+                    <div class="icon-box icon-purple">
+                        <i class="ri-bar-chart-line"></i>
+                    </div>
+                </div>
+                <div class="card-value">
+                    ₹85,000 <span class="arrow up">↗</span>
+                </div>
+                <span class="card-subtext">This month</span>
+            </div>
+
+            <div class="stat-card">
+                <div class="card-top">
+                    <span class="card-label">Expenses</span>
+                    <div class="icon-box icon-orange">
+                        <i class="ri-bar-chart-grouped-line"></i> </div>
+                </div>
+                <div class="card-value">
+                    ₹39,328 <span class="arrow down">↘</span>
+                </div>
+                <span class="card-subtext">This month</span>
+            </div>
+
+            <div class="stat-card">
+                <div class="card-top">
+                    <span class="card-label">Health Score</span>
+                    <div class="icon-box icon-teal">
+                        <i class="ri-heart-line"></i>
+                    </div>
+                </div>
+                <div class="card-value">
+                    100/100
+                </div>
+                <span class="card-subtext">Excellent</span>
+            </div>
+        </section>
+
+        <section class="transactions-section">
+            <div class="section-header">
+                <h2 class="section-title">Recent Transactions</h2>
+                <button class="btn-add">Add New</button>
+            </div>
+
+            <div class="transaction-list">
+                
+                <div class="transaction-item">
+                    <div class="item_manage">
+                    <div class="t-left">
+                        <div class="t-icon">
+                            <i class="ri-briefcase-line"></i>
+                        </div>
+                        <div class="t-details">
+                            <span class="t-title">Salary</span>
+                            <span class="t-date">Jan 1 • Monthly salary</span>
+                        </div>
+                    </div>
+                    <div class="t-right">
+                        <span class="t-amount amount-green">+₹85,000</span>
+                        <span class="t-badge badge-income">income</span>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="transaction-item">
+                      <div class="item_manage">
+                    <div class="t-left">
+                        <div class="t-icon food">
+                            <i class="ri-restaurant-line"></i>
+                        </div>
+                        <div class="t-details">
+                            <span class="t-title">Food</span>
+                            <span class="t-date">Jan 2 • Restaurants & groceries</span>
+                        </div>
+                    </div>
+                    <div class="t-right">
+                        <span class="t-amount amount-white">-₹8,500</span>
+                        <span class="t-badge badge-expense-orange">expense</span>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="transaction-item">
+                      <div class="item_manage">
+                    <div class="t-left">
+                        <div class="t-icon travel">
+                            <i class="ri-plane-line"></i>
+                        </div>
+                        <div class="t-details">
+                            <span class="t-title">Travel</span>
+                            <span class="t-date">Jan 3 • Uber rides</span>
+                        </div>
+                    </div>
+                    <div class="t-right">
+                        <span class="t-amount amount-white">-₹5,000</span>
+                        <span class="t-badge badge-expense-blue">expense</span>
+                    </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
