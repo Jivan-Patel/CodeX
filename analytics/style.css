@@ -151,7 +151,7 @@ body {
     align-items: center;
     justify-content: center;
     
-    box-shadow: 0 8px 16px rgba(124, 92, 246, 0.25);
+    box-shadow: 0 0px 16px rgba(124, 92, 246, 0.25);
 }
 
 .glow-icon i {
