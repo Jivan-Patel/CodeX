@@ -4,19 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transaction</title>
+    <title>Transactions | FinanceAI</title>
     <link rel="stylesheet" href="transection.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
         rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 
 <body>
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span class="toast-icon"></span>
+        <span class="toast-message"></span>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal-overlay" id="deleteModal">
+        <div class="modal">
+            <div class="modal-icon">🗑️</div>
+            <h3>Delete Transaction?</h3>
+            <p>This action cannot be undone.</p>
+            <div class="modal-buttons">
+                <button class="modal-btn cancel" id="cancelDelete">Cancel</button>
+                <button class="modal-btn confirm" id="confirmDelete">Delete</button>
+            </div>
+        </div>
+    </div>
+
     <main>
-        <h2 class="head">₹ Transactions</h2>
+        <!-- Navigation Header -->
+        <nav class="nav-header">
+            <a href="../dashboard/dashboard.html" class="nav-link">
+                <i class="ri-dashboard-line"></i> Dashboard
+            </a>
+            <a href="../analyze/analyze.html" class="nav-link">
+                <i class="ri-brain-line"></i> AI Analyze
+            </a>
+        </nav>
+
+        <h2 class="head">Transactions</h2>
         <h5 class="subHead">Track your income and expenses</h5>
+        
         <div class="container">
             <div class="incExpAddContainer card">
                 <button class="btn expToggleActive" id="addExpBtn">Add Expense</button>
@@ -24,10 +55,10 @@
             </div>
             <div class="addAmt card">
                 <div>
-                    <form class="formGroup">
+                    <form class="formGroup" id="transactionForm">
                         <div class="formInp">
                             <label for="amountInp">Amount</label>
-                            <input type="number" id="amountInp" name="amount" placeholder="Enter Amount" required>
+                            <input type="number" id="amountInp" name="amount" placeholder="Enter Amount" min="1" required>
                         </div>
                         <div class="formInp" id="addExp">
                             <label for="category1">Category</label>
@@ -39,6 +70,7 @@
                                 <option value="medical">🩺 Medical</option>
                                 <option value="bills">📑 Bills</option>
                                 <option value="education">📖 Education</option>
+                                <option value="shopping">🛒 Shopping</option>
                                 <option value="others">🔗 Others</option>
                             </select>
                         </div>
@@ -58,7 +90,7 @@
                             <input type="date" id="dateInp" name="date" required>
                         </div>
                         <div class="formInp">
-                            <label for="descriptionInp">Description(optional)</label>
+                            <label for="descriptionInp">Description (optional)</label>
                             <input type="text" id="descriptionInp" name="description" placeholder="Enter Description">
                         </div>
                         <div class="formInp formBtnContainer">
@@ -71,14 +103,35 @@
             <div class="seeTrans card">
                 <div class="seeHead">
                     <h3>All Transactions</h3>
-                    <button class="expBtn"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
-                            viewBox="0 -960 960 960" width="24px" fill="#000000">
-                            <path
-                                d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z" />
-                        </svg><span>Export CSV</span></button>
+                    <div class="seeHeadActions">
+                        <button class="expBtn" id="exportCsvBtn">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000">
+                                <path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z" />
+                            </svg>
+                            <span>Export CSV</span>
+                        </button>
+                    </div>
                 </div>
+                
+                <!-- Filter Buttons -->
+                <div class="filterContainer">
+                    <button class="filterBtn active" data-filter="all">All</button>
+                    <button class="filterBtn" data-filter="income">
+                        <span class="filter-dot income-dot"></span> Income
+                    </button>
+                    <button class="filterBtn" data-filter="expense">
+                        <span class="filter-dot expense-dot"></span> Expense
+                    </button>
+                </div>
+
                 <div class="seeTransCardContainer">
-                    <div class="seeTransCard"></div>
+                    <!-- Empty State -->
+                    <div class="empty-state" id="emptyState">
+                        <div class="empty-icon">📝</div>
+                        <h4>No transactions yet</h4>
+                        <p>Add your first income or expense to get started!</p>
+                    </div>
+                    <div class="seeTransCard" id="transactionList"></div>
                 </div>
             </div>
         </div>

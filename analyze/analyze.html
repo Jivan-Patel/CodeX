@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FinanceAI</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FinanceAI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Rubik:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="analyze.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="hero">
+        <h1>🧠 AI Financial Advisor</h1>
+        <p>Get personalized insights powered by advanced algorithms</p>
+        <button class="primary-btn">🧠 Analyze My Finances</button>
+      </section>
 
   <link rel="stylesheet" href="analyze.css" />
 </head>
@@ -20,39 +32,37 @@
     </section>
 
     <section class="cards">
+      <section class="cards">
+        <div class="main-card">
+          <div class="card">
+            <h4><span class="opn">⚠</span> Top Spending</h4>
+            <h2 id="topSpendingCategory">--</h2>
+            <p id="topSpendingAmount">Analyze to see data</p>
+          </div>
+
+          <div class="card">
+            <h4>📈 Spending Trend</h4>
+            <h2 id="spendingTrend">--</h2>
+            <p id="trendPrediction">Analyze to see data</p>
+          </div>
+        </div>
 
         <div class="main-card">
-         <div class="card">
-        <h4><span class="opn">⚠</span> Top Spending</h4>
-        <h2>Bills</h2>
-        <p>₹21,500 this period</p>
-      </div>
+          <div class="card">
+            <h4>💚 Financial Health</h4>
+            <h2 id="healthScore">-- / 100</h2>
+            <p id="healthStatus">Analyze to see data</p>
+          </div>
 
-      <div class="card">
-        <h4>📈 Spending Trend</h4>
-        <h2 class="danger">Increasing</h2>
-        <p>Next month prediction: ₹48,137</p>
-      </div>
+          <div class="card">
+            <h4>✅ Savings Rate</h4>
+            <h2 id="savingsRate">--%</h2>
+            <p id="savingsStatus">Analyze to see data</p>
+          </div>
         </div>
-     
+      </section>
+    </main>
 
-<div class="main-card">
-     <div class="card">
-        <h4>💚 Financial Health</h4>
-        <h2 class="success">100 / 100</h2>
-        <p>Excellent</p>
-      </div>
-
-      <div class="card">
-        <h4>✅ Savings Rate</h4>
-        <h2 class="success">63%</h2>
-        <p>On track!</p>
-      </div>
-
-    </div>
-     
-    </section>
-  </main>
-
-</body>
+    <script src="analyze.js"></script>
+  </body>
 </html>

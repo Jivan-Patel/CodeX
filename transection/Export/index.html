@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Export PDF</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+
+        <div id="pdfContent" class="pdf-container">
+
+
+
+            <div class="pdf-header">
+                <div>
+                    <h1>Finance Report</h1>
+                    <p class="subtitle">Monthly Financial Summary</p>
+                </div>
+                <div class="company-info">
+                    <p><strong>Date:</strong> <span id="pdfDate"></span></p>
+                    <p><strong>Report ID:</strong> #FIN-2026-01</p>
+                </div>
+            </div>
+
+
+            <div class="summary">
+                <div class="card income">
+                    <p>Total Income</p>
+                    <h2 id="totalIncome">₹85,000</h2>
+                </div>
+                <div class="card expense">
+                    <p>Total Expense</p>
+                    <h2 id="totalExpense">₹45,000</h2>
+                </div>
+                <div class="card balance">
+                    <p>Net Balance</p>
+                    <h2 id="netIncome">₹40,000</h2>
+                </div>
+            </div>
+
+
+            <h3 class="section-title">Transaction Details</h3>
+
+            <table class="finance-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Type</th>
+                        <th class="right">Amount</th>
+                    </tr>
+                </thead>
+                <tbody id="transactionTableBody">
+                    <!-- Dynamic content loaded from localStorage -->
+                </tbody>
+            </table>
+<br>
+             <section class="result">
+                <p class="net">Net Result</p>
+                <h2 id="profitLossText">—</h2>
+            </section>
+
+
+           
+
+        </div>
+
+         
+        <script src="script.js"></script>
+
+    <div class="button">
+        <button id="exportPdfBtn">Download</button>
+
+    </div>
+</body>
+
+</html>
