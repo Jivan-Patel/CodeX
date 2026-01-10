@@ -12,6 +12,7 @@ body {
     width: 70vw;
 
     margin: auto;
+    
 }
 
 .analitics .title {
@@ -159,4 +160,14 @@ body {
     color: #ffffff;
     
     filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.7));
+}
+
+.box_g{
+    width: 200px;
+    height: 200px;
+}
+
+.box_r{
+    width: 200px;
+    height: 200px;
 }

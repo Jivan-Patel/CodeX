@@ -172,4 +172,22 @@ function fetchData() {
     console.log(obj);
 }
 
+// shades for pie chart
+
+function green_shades(){
+    let r_g = 0
+    let g_g = Math.floor(Math.random()*255)
+    let b_g = 0
+
+    return `rgb(${r_g},${g_g},${b_g})`
+}
+function red_shades(){
+    let r_r = Math.floor(100 + Math.random()*255)
+    let g_r = 0
+    let b_r = 0
+
+    return `rgb(${r_r},${g_r},${b_r})`
+}
+
+
 fetchData();
