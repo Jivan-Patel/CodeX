@@ -70,12 +70,11 @@ const isSmallScreen2 = window.innerWidth < 800;
 new Chart(ctx2, {
     type: 'pie',
     data: {
-        labels: ["nov", "dec", "jan"],
+        labels: ["nov", "dec", "jan", "nov", "dec", "jan"],
         datasets: [{
-            backgroundColor: "rgba(105, 100, 219,0.2)",
             fill: true,
             label: '# of Votes',
-            data: [13000, 14000, 40000 , 13000, 14000, 40000],
+            data: [13000, 14000, 40000, 13000, 14000, 40000],
             backgroundColor: [
                 random_colour_pie_chart(),
                 random_colour_pie_chart(),
@@ -138,3 +137,39 @@ function random_colour_pie_chart() {
 
     return color_arr[i];
 }
+
+
+
+////
+
+let obj = {};
+
+function fetchData() {
+    data = JSON.parse(localStorage.getItem('transactions'));
+
+    // data.forEach(element => {
+    //     if (obj[element.category]==undefined) {
+    //         obj[element.category]=[];
+    //         for (let j = 0; j < data.length; j++) {
+    //             if (data[j].category == element.category){
+    //                 obj[element.category].push(data[j].amount);
+    //             }
+    //         }
+    //     }
+    // });
+    // console.log(obj);
+
+    for (let j = 0; j < data.length; j++) {
+        if (obj[data[j].category] == undefined) {
+            obj[data[j].category] = [];
+            for (let k = 0; k < data.length; k++) {
+                if (data[k].category == data[j].category) {
+                    obj[data[j].category].push(data[k].amount);
+                }
+            }
+        }
+    }
+    console.log(obj);
+}
+
+fetchData();
