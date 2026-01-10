@@ -133,7 +133,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 14px;
-    height: 415px;
+    max-height: 415px;
     overflow-y: auto;
     scrollbar-width: none;
 }
