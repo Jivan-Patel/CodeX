@@ -31,6 +31,7 @@ function fetchData() {
     }
     
     for (let i = data.length - 1; i > data.length - 1 - 5; i--) {
+        if(i < 0) break;
         displayTrans(data[i]);
     }
 
@@ -41,12 +42,15 @@ function fetchData() {
         const d = new Date(item.date);
         return d.getMonth() === lastMonth && d.getFullYear() === lastMonthYear;
     });
-    for (obj of lastMonthData) {
-        if (obj.incExp == 'expense') {
-            monthExp += Number(obj.amount);
+
+    console.log(lastMonthData);
+    for (dta of lastMonthData) {
+        
+        if (dta.incExp === 'expense') {
+            monthExp += Number(dta.amount);
         }
         else {
-            monthInc += Number(obj.amount);
+            monthInc += Number(dta.amount);
         }
     }
     monthIncDisplay.innerHTML = monthInc;
@@ -57,6 +61,8 @@ function fetchData() {
 function displayTrans(obj) {
     let div = document.createElement('div');
     div.classList.add('scard');
+    console.log(obj.catagory);
+    
     div.innerHTML = `<div class="scardP1 scardP">
                         <div class="sCat">${obj.catagory}</div>
                         <div class="sdate">${obj.date}</div>
@@ -67,13 +73,12 @@ function displayTrans(obj) {
                         <div class="seeIncExp s${obj.incExp}">${obj.incExp}</div>
                     </div>`;
     seeTransCardDisplay.appendChild(div);
+
+    
 }
 
 function recentTrans() {
     console.log(data);
 }
-
-
-
 
 fetchData();
