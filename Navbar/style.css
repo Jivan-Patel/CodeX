@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.finance-nav {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", -apple-system, sans-serif;
+    text-decoration: none;
+    list-style: none;
+    margin: auto;
+}
+
+.finance-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #161b22;
+    padding: 0 24px;
+    height: 70px;
+    border-bottom: 1px solid #30363d;
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-icon {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+}
+
+.brand-name {
+    font-size: 18px;
+    font-weight: 600;
+    background: linear-gradient(90deg, #a78bfa, #6366f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    list-style-type: none;
+}
+
+.nav-link {
+    font-size: 14px;
+    color: #8b949e;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    list-style: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+    color: #e5e7eb;
+    border-bottom: 3px solid #825EF5;
+}
+
+.nav-link:focus {
+    color: #e5e7eb;
+    border-bottom: 2px solid #825EF5;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.theme-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #21262d;
+    border: 1px solid #30363d;
+    color: #e5b32e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.2s;
+}
+
+.theme-btn:hover {
+    background-color: #30363d;
+    color: #ffd700;
+}
+
+.hamburger-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    color: #e5e7eb;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.lined {
+    border-bottom: 3px solid red;
+}
+
+@media (max-width: 768px) {
+    .finance-nav {
+        padding: 0 16px;
+    }
+
+    .hamburger-btn {
+        display: block;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #161b22;
+        flex-direction: column;
+        gap: 0;
+        border-bottom: 1px solid #30363d;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease-in-out;
+        z-index: 999;
+    }
+
+    .nav-menu.show {
+        max-height: 300px;
+    }
+
+    .nav-item {
+        width: 100%;
+        border-top: 1px solid #21262d;
+        text-decoration: none;
+        list-style-type: none;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 16px 20px;
+        text-align: center;
+        list-style-type: none;
+    }
+
+    .nav-link:hover {
+        background-color: #21262d;
+    }
+}
