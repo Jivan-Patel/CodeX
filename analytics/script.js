@@ -4,121 +4,124 @@ const ctx = document.getElementById('line_graph');
 
 var i = -1;
 
-        const isSmallScreen = window.innerWidth < 800;
+const isSmallScreen = window.innerWidth < 800;
 
-        new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ["nov", "dec", "jan"],
-                datasets: [{
-                    pointRadius:isSmallScreen ? 3 : 6,                
-                    pointBackgroundColor: '#6C7CFF',
-                    pointBorderColor: '#ffffff',    
-                    pointBorderWidth: 2,
-                    tension: 0.3,
-                    backgroundColor: "rgba(105, 100, 219,0.2)",
-                    fill: true,
-                    label: '# of Votes',
-                    data: [13000, 14000, 40000],
-                    borderColor: [
-                        "rgba(105, 100, 219,1)"
-                    ],
-                    borderWidth: 2
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        ticks: {
-                            font: {
-                                size: 14,
-                                color:"white"
-                            }
-                        },
-                        grid: {
-                            color: "rgba(155, 155, 255,0.1)",
-                        }
-                    },
-                    x: {
-                        beginAtZero: true,
-                        ticks: {
-                            font: {
-                                size: 14,
-                                color:"white"
-                            }
-                        },
-                        grid: {
-                            color: "rgba(155, 155, 255,0.1)"
-                        }
+new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ["nov", "dec", "jan"],
+        datasets: [{
+            pointRadius: isSmallScreen ? 3 : 6,
+            pointBackgroundColor: '#6C7CFF',
+            pointBorderColor: '#ffffff',
+            pointBorderWidth: 2,
+            tension: 0.3,
+            backgroundColor: "rgba(105, 100, 219,0.2)",
+            fill: true,
+            label: '# of Votes',
+            data: [13000, 14000, 40000],
+            borderColor: [
+                "rgba(105, 100, 219,1)"
+            ],
+            borderWidth: 2
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true,
+                ticks: {
+                    font: {
+                        size: 14,
+                        color: "white"
                     }
                 },
-                plugins: {
-                    legend: {
-                        display: false
+                grid: {
+                    color: "rgba(155, 155, 255,0.1)",
+                }
+            },
+            x: {
+                beginAtZero: true,
+                ticks: {
+                    font: {
+                        size: 14,
+                        color: "white"
                     }
+                },
+                grid: {
+                    color: "rgba(155, 155, 255,0.1)"
                 }
             }
-        });
-        
-        // chart section (pie chart)
-        
-        const ctx2 = document.getElementById('pie_chart');
-        
-                const isSmallScreen2 = window.innerWidth < 800;
-        
-                new Chart(ctx2, {
-                    type: 'pie',
-                    data: {
-                        labels: ["nov", "dec", "jan"],
-                        datasets: [{
-                            backgroundColor: "rgba(105, 100, 219,0.2)",
-                            fill: true,
-                            label: '# of Votes',
-                            data: [13000, 14000, 40000],
-                            backgroundColor: [
-                                random_colour_pie_chart(),
-                                random_colour_pie_chart(),
-                                random_colour_pie_chart()
-                            ],
-                            borderColor: [
-                                "rgba(105, 100, 219,1)"
-                            ],
-                            borderWidth: 0
-                        }]
-                    },
-                    options: {
-                        scales: {
-                            y: {
-                                beginAtZero: true,
-                                ticks: {
-                                    display:false,
-                                },
-                                grid: {
-                                    display:false
-                                }
-                            },
-                            x: {
-                                beginAtZero: true,
-                                ticks: {
-                                    display:false,
-                                },
-                                grid: {
-                                    display:false
-                                }
-                            }
-                        },
-                        plugins: {
-                            legend: {
-                                display: false
-                            }
-                        }
-                    }
-                });
+        },
+        plugins: {
+            legend: {
+                display: false
+            }
+        }
+    }
+});
+
+// chart section (pie chart)
+
+const ctx2 = document.getElementById('pie_chart');
+
+const isSmallScreen2 = window.innerWidth < 800;
+
+new Chart(ctx2, {
+    type: 'pie',
+    data: {
+        labels: ["nov", "dec", "jan"],
+        datasets: [{
+            backgroundColor: "rgba(105, 100, 219,0.2)",
+            fill: true,
+            label: '# of Votes',
+            data: [13000, 14000, 40000 , 13000, 14000, 40000],
+            backgroundColor: [
+                random_colour_pie_chart(),
+                random_colour_pie_chart(),
+                random_colour_pie_chart(),
+                random_colour_pie_chart(),
+                random_colour_pie_chart(),
+                random_colour_pie_chart()
+            ],
+            borderColor: [
+                "rgba(105, 100, 219,1)"
+            ],
+            borderWidth: 0
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true,
+                ticks: {
+                    display: false,
+                },
+                grid: {
+                    display: false
+                }
+            },
+            x: {
+                beginAtZero: true,
+                ticks: {
+                    display: false,
+                },
+                grid: {
+                    display: false
+                }
+            }
+        },
+        plugins: {
+            legend: {
+                display: false
+            }
+        }
+    }
+});
 
 // colour function for pie chart
 
-function random_colour_pie_chart(){
+function random_colour_pie_chart() {
     var color_arr = [
         "rgb(195, 151, 20)",
         "rgb(199, 65, 136)",
@@ -127,8 +130,8 @@ function random_colour_pie_chart(){
         "rgb(142, 76, 212)"
     ];
 
-    if (i==4){
-        i=0;
+    if (i == 4) {
+        i = 0;
     }
 
     i++;
