@@ -13,9 +13,9 @@ const descriptionInp = document.getElementById('descriptionInp');
 const addExpenseBtn = document.getElementById('addExpeBtn');
 const addIncomeBtn = document.getElementById('addIncoBtn');
 
-
 const seeTransCardDisplay = document.querySelector('.seeTransCard');
 
+var data = [];
 
 var incExpToggle = 'expense';
 
@@ -53,7 +53,6 @@ switchExpense.addEventListener('click', switchIncExpToggle);
 
 
 
-var data = [];
 
 function fetchData() {
     data = JSON.parse(localStorage.getItem('transactions')) || [];
