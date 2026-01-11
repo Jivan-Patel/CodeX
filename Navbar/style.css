@@ -1,24 +1,38 @@
-.finance-nav{
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rubik:wght@400;500;600;700&display=swap');
+
+:root {
+    --bg-color: rgb(31, 20, 54);
+    --card-bg: rgb(43, 32, 64);
+    --primary-btn: rgb(110, 73, 238);
+    --red-btn: rgb(242, 62, 87);
+    --green-btn: rgb(28, 190, 102);
+    --other-color: #b0a8d3;
+    --text-primary: #ffffff;
+    --text-secondary: #8b949e;
+    --border-color: #30363d;
+    --nav-bg: #161b22;
+    --boxShadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.finance-nav {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: "Inter", -apple-system, sans-serif;
+    font-family: "Inter", "Rubik", -apple-system, sans-serif;
     text-decoration: none;
     list-style: none;
-    margin: auto;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 0;
     z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #161b22;
+    background-color: var(--nav-bg);
     padding: 0 24px;
     height: 70px;
-    border-bottom: 1px solid #30363d;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .nav-brand {
@@ -44,6 +58,7 @@
     font-weight: 600;
     background: linear-gradient(90deg, #a78bfa, #6366f1);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -51,16 +66,16 @@
     display: flex;
     gap: 32px;
     align-items: center;
-    list-style-type:none;
+    list-style-type: none;
 }
 
 .nav-link {
     font-size: 14px;
-    color: #8b949e;
+    color: var(--text-secondary);
     font-weight: 500;
     transition: color 0.3s ease;
-    text-decoration:none;
-    list-style:none;
+    text-decoration: none;
+    list-style: none;
 
     transition: all 0.2s ease-in-out;
 }
@@ -70,10 +85,11 @@
     border-bottom: 3px solid #825EF5;
 }
 
-.nav-link:focus{
+.nav-link:focus {
     color: #e5e7eb;
     border-bottom: 2px solid #825EF5;
 }
+
 .nav-actions {
     display: flex;
     align-items: center;
@@ -85,7 +101,7 @@
     height: 36px;
     border-radius: 50%;
     background-color: #21262d;
-    border: 1px solid #30363d;
+    border: 1px solid var(--border-color);
     color: #e5b32e;
     display: flex;
     align-items: center;
@@ -110,8 +126,8 @@
     padding: 4px;
 }
 
-.lined{
-    border-bottom:3px solid red;
+.lined {
+    border-bottom: 3px solid red;
 }
 
 @media (max-width: 768px) {
@@ -125,7 +141,7 @@
 
     .nav-menu {
         position: absolute;
-        top: 70px; 
+        top: 70px;
         left: 0;
         width: 100%;
         background-color: #161b22;
@@ -139,23 +155,24 @@
     }
 
     .nav-menu.show {
-        max-height: 300px; 
+        max-height: 300px;
     }
 
     .nav-item {
         width: 100%;
         border-top: 1px solid #21262d;
-        text-decoration:none;
-       list-style-type:none;
+        text-decoration: none;
+        list-style-type: none;
     }
-    
+
     .nav-link {
         display: block;
         padding: 16px 20px;
         text-align: center;
-       list-style-type:none;
+        list-style-type: none;
     }
+
     .nav-link:hover {
         background-color: #21262d;
-    }   
+    }
 }

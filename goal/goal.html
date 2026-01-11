@@ -5,32 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FinanceAI - Goals</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../Navbar/style.css">
     <link rel="stylesheet" href="goal.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <header class="header">
-        <div class="logo">
-            <div class="logo-icon"><i class="fas fa-wallet"></i></div>
-            <span>FinanceAI</span>
+    <nav class="finance-nav">
+        <div class="nav-brand">
+            <div class="brand-icon">
+                <i class="ri-wallet-3-line"></i>
+            </div>
+            <span class="brand-name">FinanceAI</span>
         </div>
-        <nav class="nav">
-            <a href="../index.html" class="nav-link">Dashboard</a>
-            <a href="../transection/transection.html" class="nav-link">Add Expense</a>
-            <a href="goal.html" class="nav-link active">Goals</a>
-            <a href="../analytics/analytics.html" class="nav-link">Analytics</a>
-            <a href="../ai-insights/ai-insights.html" class="nav-link">AI Insights</a>
-        </nav>
-        <div class="header-right">
-            <button class="theme-btn"><i class="fas fa-sun"></i></button>
+
+        <ul class="nav-menu" id="nav-menu">
+            <li class="nav-item"><a href="../index.html" class="nav-link">Dashboard</a></li>
+            <li class="nav-item"><a href="../transection/transection.html" class="nav-link">Add Expense</a></li>
+            <li class="nav-item"><a href="./goal.html" class="nav-link">Goals</a></li>
+            <li class="nav-item"><a href="../analytics/analytics.html" class="nav-link">Analytics</a></li>
+            <li class="nav-item"><a href="../ai-insights/ai-insights.html" class="nav-link">AI Insights</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <button class="theme-btn">
+                <i class="ri-sun-line"></i>
+            </button>
+
+            <button class="hamburger-btn" id="hamburger-btn">
+                <i class="ri-menu-line"></i>
+            </button>
         </div>
-    </header>
+    </nav>
+    <script src="../Navbar/script.js"></script>
 
     <main class="page">
         <div class="page-header">
             <div>
-                <h1><i class="fas fa-bullseye"></i> Financial Goals</h1>
+                <h1><i class="ri-focus-3-line"></i> Financial Goals</h1>
                 <p class="subtitle">Track your progress towards your dreams</p>
             </div>
             <button class="btn-primary" onclick="openGoalModal()">+ New Goal</button>

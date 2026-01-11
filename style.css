@@ -1,12 +1,4 @@
-:root {
-    --bg-color: rgb(31, 20, 54);
-    --card-bg: rgb(43, 32, 64);
-    --primary-btn: rgb(110, 73, 238);
-    --red-btn: rgb(242, 62, 87);
-    --green-btn: rgb(28, 190, 102);
-    --other-color: #b0a8d3;
-    --boxShadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
+/* Global variables are inherited from Navbar/style.css */
 
 
 * {
@@ -16,9 +8,9 @@
 }
 
 body {
-    font-family: sans-serif;
-    background-color: rgb(34, 20, 56);
-    color: #ffffff;
+    font-family: 'Rubik', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -87,6 +79,7 @@ main {
     font-size: 14px;
     font-weight: 500;
 }
+
 .card {
     background-color: var(--card-bg);
     border-radius: 10px;
@@ -94,6 +87,7 @@ main {
     box-shadow: var(--boxShadow);
     margin-bottom: 20px;
 }
+
 .icon-box {
     width: 40px;
     height: 40px;

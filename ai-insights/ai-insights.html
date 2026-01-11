@@ -5,40 +5,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FinanceAI - AI Insights</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../Navbar/style.css">
     <link rel="stylesheet" href="ai-insights.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <header class="header">
-        <div class="logo">
-            <div class="logo-icon"><i class="fas fa-wallet"></i></div>
-            <span>FinanceAI</span>
+    <nav class="finance-nav">
+        <div class="nav-brand">
+            <div class="brand-icon">
+                <i class="ri-wallet-3-line"></i>
+            </div>
+            <span class="brand-name">FinanceAI</span>
         </div>
-        <nav class="nav">
-            <a href="../index.html" class="nav-link">Dashboard</a>
-            <a href="../transection/transection.html" class="nav-link">Add Expense</a>
-            <a href="../goal/goal.html" class="nav-link">Goals</a>
-            <a href="../analytics/analytics.html" class="nav-link">Analytics</a>
-            <a href="ai-insights.html" class="nav-link active">AI Insights</a>
-        </nav>
-        <div class="header-right">
-            <button class="theme-btn"><i class="fas fa-sun"></i></button>
+
+        <ul class="nav-menu" id="nav-menu">
+            <li class="nav-item"><a href="../index.html" class="nav-link">Dashboard</a></li>
+            <li class="nav-item"><a href="../transection/transection.html" class="nav-link">Add Expense</a></li>
+            <li class="nav-item"><a href="../goal/goal.html" class="nav-link">Goals</a></li>
+            <li class="nav-item"><a href="../analytics/analytics.html" class="nav-link">Analytics</a></li>
+            <li class="nav-item"><a href="./ai-insights.html" class="nav-link">AI Insights</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <button class="theme-btn">
+                <i class="ri-sun-line"></i>
+            </button>
+
+            <button class="hamburger-btn" id="hamburger-btn">
+                <i class="ri-menu-line"></i>
+            </button>
         </div>
-    </header>
+    </nav>
+    <script src="../Navbar/script.js"></script>
 
     <main class="page">
         <div class="ai-header">
-            <h1><i class="fas fa-brain"></i> AI Financial Advisor</h1>
+            <h1><i class="ri-brain-line"></i> AI Financial Advisor</h1>
             <p class="subtitle">Get personalized insights powered by advanced algorithms</p>
             <button class="btn-analyze" onclick="analyzeFinances()">
-                <i class="fas fa-brain"></i> Analyze My Finances
+                <i class="ri-brain-line"></i> Analyze My Finances
             </button>
         </div>
 
         <div class="insights-grid">
             <div class="insight-card">
-                <div class="insight-icon orange"><i class="fas fa-exclamation-triangle"></i></div>
+                <div class="insight-icon orange"><i class="ri-error-warning-line"></i></div>
                 <div class="insight-content">
                     <span class="insight-label">Top Spending</span>
                     <div class="insight-value" id="top-spending">💡 Bills</div>
@@ -46,7 +58,7 @@
                 </div>
             </div>
             <div class="insight-card">
-                <div class="insight-icon pink"><i class="fas fa-chart-line"></i></div>
+                <div class="insight-icon pink"><i class="ri-line-chart-line"></i></div>
                 <div class="insight-content">
                     <span class="insight-label">Spending Trend</span>
                     <div class="insight-value green" id="spending-trend">Increasing</div>
@@ -54,7 +66,7 @@
                 </div>
             </div>
             <div class="insight-card">
-                <div class="insight-icon purple"><i class="fas fa-heart"></i></div>
+                <div class="insight-icon purple"><i class="ri-heart-line"></i></div>
                 <div class="insight-content">
                     <span class="insight-label">Financial Health</span>
                     <div class="insight-value green" id="health-score">100/100</div>
@@ -62,7 +74,7 @@
                 </div>
             </div>
             <div class="insight-card">
-                <div class="insight-icon green"><i class="fas fa-check-circle"></i></div>
+                <div class="insight-icon green"><i class="ri-checkbox-circle-line"></i></div>
                 <div class="insight-content">
                     <span class="insight-label">Savings Rate</span>
                     <div class="insight-value green" id="savings-rate">63%</div>
@@ -72,7 +84,7 @@
         </div>
 
         <div class="card recommendations-card">
-            <h3><i class="fas fa-lightbulb"></i> AI Recommendations</h3>
+            <h3><i class="ri-lightbulb-line"></i> AI Recommendations</h3>
             <p class="subtitle">Personalized tips to improve your finances</p>
             <div id="recommendations" class="recommendations-list">
                 <p style="color: var(--text-secondary); text-align: center; padding: 20px;">Click "Analyze My Finances"

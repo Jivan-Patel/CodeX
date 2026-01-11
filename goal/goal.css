@@ -4,93 +4,18 @@
     box-sizing: border-box;
 }
 
-:root {
-    --bg-primary: #0f0f1a;
-    --bg-secondary: #1a1a2e;
-    --bg-card: #1e1e32;
-    --text-primary: #ffffff;
-    --text-secondary: #9ca3af;
-    --accent-purple: #8b5cf6;
-    --accent-blue: #3b82f6;
-    --accent-green: #10b981;
-    --accent-red: #ef4444;
-    --accent-pink: #ec4899;
-    --border-color: rgba(139, 92, 246, 0.2);
-    --gradient-purple: linear-gradient(135deg, #8b5cf6, #6366f1);
-}
+/* Global variables are inherited from Navbar/style.css */
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: var(--bg-primary);
+    font-family: 'Rubik', sans-serif;
+    background: var(--bg-color);
     color: var(--text-primary);
     min-height: 100vh;
     line-height: 1.6;
+    padding-top: 80px;
 }
 
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 40px;
-    background: var(--bg-secondary);
-    border-bottom: 1px solid var(--border-color);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 20px;
-    font-weight: 600;
-}
-
-.logo-icon {
-    width: 36px;
-    height: 36px;
-    background: var(--gradient-purple);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.nav {
-    display: flex;
-    gap: 10px;
-}
-
-.nav-link {
-    color: var(--text-secondary);
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    transition: all 0.3s;
-    font-size: 14px;
-}
-
-.nav-link:hover,
-.nav-link.active {
-    color: var(--text-primary);
-    background: rgba(139, 92, 246, 0.1);
-}
-
-.nav-link.active {
-    border-bottom: 2px solid var(--accent-purple);
-}
-
-.theme-btn {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    color: var(--text-primary);
-    cursor: pointer;
-    transition: all 0.3s;
-}
+/* Standard navbar uses var(--nav-bg) and var(--border-color) */
 
 .page {
     padding: 30px 40px;
@@ -112,7 +37,7 @@ body {
 
 .page-header h1 i {
     margin-right: 10px;
-    color: var(--accent-purple);
+    color: var(--primary-btn);
 }
 
 .subtitle {
@@ -121,7 +46,7 @@ body {
 }
 
 .btn-primary {
-    background: var(--accent-green);
+    background: var(--green-btn);
     color: white;
     border: none;
     padding: 10px 20px;
@@ -144,7 +69,7 @@ body {
 }
 
 .goal-card {
-    background: var(--bg-card);
+    background: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 16px;
     padding: 25px;
@@ -168,7 +93,7 @@ body {
 
 .progress-circle .progress-bg {
     fill: none;
-    stroke: var(--bg-secondary);
+    stroke: rgba(176, 168, 211, 0.1);
     stroke-width: 8;
 }
 
@@ -211,7 +136,7 @@ body {
 }
 
 .goal-stat .value.green {
-    color: var(--accent-green);
+    color: var(--green-btn);
 }
 
 .goal-actions {
@@ -222,7 +147,7 @@ body {
 .goal-input {
     flex: 1;
     padding: 12px;
-    background: var(--bg-secondary);
+    background: rgba(176, 168, 211, 0.1);
     border: 1px solid var(--border-color);
     border-radius: 8px;
     color: var(--text-primary);
@@ -232,7 +157,7 @@ body {
     width: 40px;
     height: 40px;
     border-radius: 8px;
-    background: var(--accent-green);
+    background: var(--green-btn);
     border: none;
     color: white;
     cursor: pointer;
@@ -256,7 +181,7 @@ body {
 }
 
 .modal-content {
-    background: var(--bg-card);
+    background: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 16px;
     padding: 30px;
@@ -293,7 +218,7 @@ body {
 .form-group input {
     width: 100%;
     padding: 15px;
-    background: var(--bg-secondary);
+    background: rgba(176, 168, 211, 0.1);
     border: 1px solid var(--border-color);
     border-radius: 10px;
     color: var(--text-primary);
