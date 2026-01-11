@@ -1,40 +1,33 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Set current date
+  
   const pdfDate = document.getElementById("pdfDate");
   if (pdfDate) {
     pdfDate.innerText = new Date().toLocaleDateString();
   }
 
-  // Load transactions from localStorage
   const transactions = JSON.parse(localStorage.getItem("transactions")) || [];
   const tableBody = document.getElementById("transactionTableBody");
 
   let totalIncome = 0;
   let totalExpense = 0;
 
-  // Populate the table with transaction data
   transactions.forEach((transaction) => {
     const row = document.createElement("tr");
 
-    // Format date for display
     const dateFormatted = transaction.date || "N/A";
 
-    // Determine description (use category if no description)
     const description =
       transaction.description || transaction.catagory || "No description";
 
-    // Determine type and amount
     const isExpense = transaction.incExp === "expense";
     const amount = parseFloat(transaction.amount) || 0;
 
-    // Calculate totals
     if (isExpense) {
       totalExpense += amount;
     } else {
       totalIncome += amount;
     }
 
-    // Create row HTML
     row.innerHTML = `
       <td>${dateFormatted}</td>
       <td>${description}</td>
@@ -49,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
     tableBody.appendChild(row);
   });
 
-  // If no transactions, show a message
   if (transactions.length === 0) {
     const emptyRow = document.createElement("tr");
     emptyRow.innerHTML =
@@ -57,7 +49,6 @@ document.addEventListener("DOMContentLoaded", function () {
     tableBody.appendChild(emptyRow);
   }
 
-  // Update summary cards
   const incomeEl = document.getElementById("totalIncome");
   const expenseEl = document.getElementById("totalExpense");
   const netEl = document.getElementById("netIncome");
@@ -79,7 +70,6 @@ document.addEventListener("DOMContentLoaded", function () {
     netEl.classList.add(netIncome >= 0 ? "amount-positive" : "amount-negative");
   }
 
-  // Update profit/loss result
   const resultText = document.getElementById("profitLossText");
 
   if (resultText) {
@@ -94,7 +84,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // PDF Export functionality
   const exportBtn = document.getElementById("exportPdfBtn");
 
   if (exportBtn) {

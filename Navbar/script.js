@@ -13,7 +13,3 @@ hamburger.addEventListener('click', () => {
         icon.classList.add('ri-menu-line');
     }
 });
-
-//  navItem.addEventListener('click'){
-
-//  }

@@ -4,8 +4,6 @@
     box-sizing: border-box;
 }
 
-/* Global variables are inherited from Navbar/style.css */
-
 body {
     font-family: 'Rubik', sans-serif;
     background: var(--bg-color);
@@ -14,8 +12,6 @@ body {
     line-height: 1.6;
     padding-top: 80px;
 }
-
-/* Standard navbar uses var(--nav-bg) and var(--border-color) */
 
 .page {
     padding: 30px 40px;
