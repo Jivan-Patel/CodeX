@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinanceAI - AI Insights</title>
+    <link rel="stylesheet" href="ai-insights.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon"><i class="fas fa-wallet"></i></div>
+            <span>FinanceAI</span>
+        </div>
+        <nav class="nav">
+            <a href="../index.html" class="nav-link">Dashboard</a>
+            <a href="../transection/transection.html" class="nav-link">Add Expense</a>
+            <a href="../goal/goal.html" class="nav-link">Goals</a>
+            <a href="../analytics/analytics.html" class="nav-link">Analytics</a>
+            <a href="ai-insights.html" class="nav-link active">AI Insights</a>
+        </nav>
+        <div class="header-right">
+            <button class="theme-btn"><i class="fas fa-sun"></i></button>
+        </div>
+    </header>
+
+    <!-- AI Insights Page -->
+    <main class="page">
+        <div class="ai-header">
+            <h1><i class="fas fa-brain"></i> AI Financial Advisor</h1>
+            <p class="subtitle">Get personalized insights powered by advanced algorithms</p>
+            <button class="btn-analyze" onclick="analyzeFinances()">
+                <i class="fas fa-brain"></i> Analyze My Finances
+            </button>
+        </div>
+
+        <div class="insights-grid">
+            <div class="insight-card">
+                <div class="insight-icon orange"><i class="fas fa-exclamation-triangle"></i></div>
+                <div class="insight-content">
+                    <span class="insight-label">Top Spending</span>
+                    <div class="insight-value" id="top-spending">💡 Bills</div>
+                    <div class="insight-sub" id="top-spending-amount">₹21,500 this period</div>
+                </div>
+            </div>
+            <div class="insight-card">
+                <div class="insight-icon pink"><i class="fas fa-chart-line"></i></div>
+                <div class="insight-content">
+                    <span class="insight-label">Spending Trend</span>
+                    <div class="insight-value green" id="spending-trend">Increasing</div>
+                    <div class="insight-sub" id="prediction">Next month prediction: ₹48,137</div>
+                </div>
+            </div>
+            <div class="insight-card">
+                <div class="insight-icon purple"><i class="fas fa-heart"></i></div>
+                <div class="insight-content">
+                    <span class="insight-label">Financial Health</span>
+                    <div class="insight-value green" id="health-score">100/100</div>
+                    <div class="insight-sub">Excellent</div>
+                </div>
+            </div>
+            <div class="insight-card">
+                <div class="insight-icon green"><i class="fas fa-check-circle"></i></div>
+                <div class="insight-content">
+                    <span class="insight-label">Savings Rate</span>
+                    <div class="insight-value green" id="savings-rate">63%</div>
+                    <div class="insight-sub">On track!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card recommendations-card">
+            <h3><i class="fas fa-lightbulb"></i> AI Recommendations</h3>
+            <p class="subtitle">Personalized tips to improve your finances</p>
+            <div id="recommendations" class="recommendations-list">
+                <p style="color: var(--text-secondary); text-align: center; padding: 20px;">Click "Analyze My Finances"
+                    to get personalized recommendations!</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="ai-insights.js"></script>
+</body>
+
+</html>

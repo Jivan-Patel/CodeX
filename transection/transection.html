@@ -16,34 +16,34 @@
 </head>
 
 <body>
-    
-  <nav class="finance-nav">
-    <div class="nav-brand">
-      <div class="brand-icon">
-        <i class="ri-wallet-3-line"></i>
-      </div>
-      <span class="brand-name">FinanceAI</span>
-    </div>
 
-    <ul class="nav-menu" id="nav-menu">
-      <li class="nav-item"><a href="../index.html" class="nav-link">Dashboard</a></li>
-      <li class="nav-item"><a href="../transection/transection.html" class="nav-link">Add Expense</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">Goals</a></li>
-      <li class="nav-item"><a href="../analytics/index.html" class="nav-link">Analytics</a></li>
-      <li class="nav-item"><a href="../analyze/analyze.html" class="nav-link">AI Insights</a></li>
-    </ul>
+    <nav class="finance-nav">
+        <div class="nav-brand">
+            <div class="brand-icon">
+                <i class="ri-wallet-3-line"></i>
+            </div>
+            <span class="brand-name">FinanceAI</span>
+        </div>
 
-    <div class="nav-actions">
-      <button class="theme-btn">
-        <i class="ri-sun-line"></i>
-      </button>
+        <ul class="nav-menu" id="nav-menu">
+            <li class="nav-item"><a href="../index.html" class="nav-link">Dashboard</a></li>
+            <li class="nav-item"><a href="transection.html" class="nav-link">Add Expense</a></li>
+            <li class="nav-item"><a href="../goal/goal.html" class="nav-link">Goals</a></li>
+            <li class="nav-item"><a href="../analytics/analytics.html" class="nav-link">Analytics</a></li>
+            <li class="nav-item"><a href="../ai-insights/ai-insights.html" class="nav-link">AI Insights</a></li>
+        </ul>
 
-      <button class="hamburger-btn" id="hamburger-btn">
-        <i class="ri-menu-line"></i>
-      </button>
-    </div>
-  </nav>
-  <script src="./Navbar/script.js"></script>
+        <div class="nav-actions">
+            <button class="theme-btn">
+                <i class="ri-sun-line"></i>
+            </button>
+
+            <button class="hamburger-btn" id="hamburger-btn">
+                <i class="ri-menu-line"></i>
+            </button>
+        </div>
+    </nav>
+    <script src="./Navbar/script.js"></script>
 
     <!-- Toast Notification -->
     <div class="toast" id="toast">
@@ -68,7 +68,7 @@
 
         <h2 class="head">Transactions</h2>
         <h5 class="subHead">Track your income and expenses</h5>
-        
+
         <div class="container">
             <div class="incExpAddContainer card">
                 <button class="btn expToggleActive" id="addExpBtn">Add Expense</button>
@@ -79,7 +79,8 @@
                     <form class="formGroup" id="transactionForm">
                         <div class="formInp">
                             <label for="amountInp">Amount</label>
-                            <input type="number" id="amountInp" name="amount" placeholder="Enter Amount" min="1" required>
+                            <input type="number" id="amountInp" name="amount" placeholder="Enter Amount" min="1"
+                                required>
                         </div>
                         <div class="formInp" id="addExp">
                             <label for="category1">Category</label>
@@ -126,14 +127,16 @@
                     <h3>All Transactions</h3>
                     <div class="seeHeadActions">
                         <button class="expBtn" id="exportCsvBtn">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000">
-                                <path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z" />
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#000000">
+                                <path
+                                    d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z" />
                             </svg>
                             <span>Export CSV</span>
                         </button>
                     </div>
                 </div>
-                
+
                 <!-- Filter Buttons -->
                 <div class="filterContainer">
                     <button class="filterBtn active" data-filter="all">All</button>
