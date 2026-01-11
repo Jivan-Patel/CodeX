@@ -1,6 +1,3 @@
-// Analytics JavaScript
-// All data stored in localStorage
-
 var appData = {
     transactions: [],
     goals: [],
@@ -20,36 +17,30 @@ var categoryIcons = {
 var categoryChart = null;
 var trendChart = null;
 
-// Load data from localStorage
 function loadData() {
-    var saved = localStorage.getItem('financeAI_data');
-    if (saved) {
-        appData = JSON.parse(saved);
-    }
+    appData.transactions = JSON.parse(localStorage.getItem('transactions')) || [];
     updateAnalytics();
 }
 
-// Format number with commas
 function formatNumber(num) {
     return num.toLocaleString('en-IN');
 }
 
-// Capitalize first letter
 function capitalize(str) {
+    if (!str) return '';
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-// Calculate totals
 function calculateTotals() {
     var totalIncome = 0;
     var totalExpenses = 0;
 
     for (var i = 0; i < appData.transactions.length; i++) {
         var t = appData.transactions[i];
-        if (t.type === 'income') {
-            totalIncome = totalIncome + t.amount;
+        if (t.incExp === 'income') {
+            totalIncome = totalIncome + Number(t.amount);
         } else {
-            totalExpenses = totalExpenses + t.amount;
+            totalExpenses = totalExpenses + Number(t.amount);
         }
     }
 
@@ -60,28 +51,24 @@ function calculateTotals() {
     };
 }
 
-// Update analytics charts
 function updateAnalytics() {
     var totals = calculateTotals();
     var savingsRate = totals.income > 0 ? Math.round(((totals.income - totals.expenses) / totals.income) * 100) : 0;
 
-    // Update stat cards
     document.getElementById('avg-spend').textContent = formatNumber(Math.round(totals.expenses));
     document.getElementById('savings-rate').textContent = savingsRate + '%';
 
-    // Calculate spending by category
     var categories = {};
     for (var i = 0; i < appData.transactions.length; i++) {
         var t = appData.transactions[i];
-        if (t.type === 'expense') {
+        if (t.incExp === 'expense') {
             if (!categories[t.category]) {
                 categories[t.category] = 0;
             }
-            categories[t.category] = categories[t.category] + t.amount;
+            categories[t.category] = categories[t.category] + Number(t.amount);
         }
     }
 
-    // Find top category
     var topCat = 'None';
     var topAmount = 0;
     for (var cat in categories) {
@@ -94,7 +81,6 @@ function updateAnalytics() {
     document.getElementById('top-category').textContent = catIcon.icon + ' ' + capitalize(topCat);
     document.getElementById('top-category-amount').textContent = '₹' + formatNumber(topAmount);
 
-    // Create pie chart
     var catLabels = [];
     var catData = [];
     var catColors = [];
@@ -137,7 +123,6 @@ function updateAnalytics() {
         }
     });
 
-    // Create line chart for monthly trend
     var lineCtx = document.getElementById('trendChart').getContext('2d');
 
     if (trendChart) {
@@ -185,5 +170,4 @@ function updateAnalytics() {
     });
 }
 
-// Load data when page loads
 loadData();

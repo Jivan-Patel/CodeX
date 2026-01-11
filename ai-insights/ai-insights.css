@@ -29,7 +29,6 @@ body {
     line-height: 1.6;
 }
 
-/* Header */
 .header {
     display: flex;
     align-items: center;
@@ -94,7 +93,6 @@ body {
     cursor: pointer;
 }
 
-/* Page */
 .page {
     padding: 30px 40px;
     max-width: 1200px;
@@ -106,7 +104,6 @@ body {
     font-size: 14px;
 }
 
-/* AI Header */
 .ai-header {
     text-align: center;
     padding: 40px 0;
@@ -139,7 +136,6 @@ body {
     box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
 }
 
-/* Insights Grid */
 .insights-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -207,7 +203,6 @@ body {
     font-size: 13px;
 }
 
-/* Cards */
 .card {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -237,7 +232,6 @@ body {
     border-left: 4px solid var(--accent-purple);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .header {
         flex-direction: column;

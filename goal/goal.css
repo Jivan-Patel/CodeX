@@ -27,7 +27,6 @@ body {
     line-height: 1.6;
 }
 
-/* Header */
 .header {
     display: flex;
     align-items: center;
@@ -93,7 +92,6 @@ body {
     transition: all 0.3s;
 }
 
-/* Page */
 .page {
     padding: 30px 40px;
     max-width: 1400px;
@@ -122,7 +120,6 @@ body {
     font-size: 14px;
 }
 
-/* Buttons */
 .btn-primary {
     background: var(--accent-green);
     color: white;
@@ -140,7 +137,6 @@ body {
     transform: translateY(-2px);
 }
 
-/* Goals Grid */
 .goals-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -242,7 +238,6 @@ body {
     cursor: pointer;
 }
 
-/* Modal */
 .modal {
     display: none;
     position: fixed;
@@ -314,7 +309,6 @@ body {
     width: 100%;
 }
 
-/* Responsive */
 @media (max-width: 1200px) {
     .goals-grid {
         grid-template-columns: repeat(2, 1fr);

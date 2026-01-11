@@ -1,32 +1,22 @@
-// Goal JavaScript
-// All data stored in localStorage
-
 var appData = {
     transactions: [],
     goals: [],
     settings: {}
 };
 
-// Load data from localStorage
 function loadData() {
-    var saved = localStorage.getItem('financeAI_data');
-    if (saved) {
-        appData = JSON.parse(saved);
-    }
+    appData.goals = JSON.parse(localStorage.getItem('goals')) || [];
     renderGoals();
 }
 
-// Save data to localStorage
 function saveData() {
-    localStorage.setItem('financeAI_data', JSON.stringify(appData));
+    localStorage.setItem('goals', JSON.stringify(appData.goals));
 }
 
-// Format number with commas
 function formatNumber(num) {
     return num.toLocaleString('en-IN');
 }
 
-// Render goals
 function renderGoals() {
     var container = document.getElementById('goals-grid');
     container.innerHTML = '';
@@ -37,7 +27,6 @@ function renderGoals() {
         var remaining = goal.target - goal.saved;
         var daysLeft = Math.max(0, Math.ceil((new Date(goal.targetDate) - new Date()) / (1000 * 60 * 60 * 24)));
 
-        // Calculate SVG circle stroke
         var radius = 52;
         var circumference = 2 * Math.PI * radius;
         var offset = circumference - (percent / 100) * circumference;
@@ -71,7 +60,6 @@ function renderGoals() {
     }
 }
 
-// Add amount to goal
 function addToGoal(goalId) {
     var input = document.getElementById('goal-add-' + goalId);
     var amount = parseInt(input.value);
@@ -93,17 +81,14 @@ function addToGoal(goalId) {
     input.value = '';
 }
 
-// Open goal modal
 function openGoalModal() {
     document.getElementById('goal-modal').classList.add('active');
 }
 
-// Close goal modal
 function closeGoalModal() {
     document.getElementById('goal-modal').classList.remove('active');
 }
 
-// Add new goal
 function addGoal(event) {
     event.preventDefault();
 
@@ -128,8 +113,6 @@ function addGoal(event) {
     renderGoals();
 }
 
-// Form submit handler
 document.getElementById('goal-form').addEventListener('submit', addGoal);
 
-// Load data when page loads
 loadData();

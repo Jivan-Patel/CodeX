@@ -1,6 +1,3 @@
-// AI Insights JavaScript
-// All data stored in localStorage
-
 var appData = {
     transactions: [],
     goals: [],
@@ -17,36 +14,31 @@ var categoryIcons = {
     other: { icon: '📦', color: '#6b7280' }
 };
 
-// Load data from localStorage
 function loadData() {
-    var saved = localStorage.getItem('financeAI_data');
-    if (saved) {
-        appData = JSON.parse(saved);
-    }
+    appData.transactions = JSON.parse(localStorage.getItem('transactions')) || [];
+    appData.goals = JSON.parse(localStorage.getItem('goals')) || [];
     updateInsights();
 }
 
-// Format number with commas
 function formatNumber(num) {
     return num.toLocaleString('en-IN');
 }
 
-// Capitalize first letter
 function capitalize(str) {
+    if (!str) return '';
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-// Calculate totals
 function calculateTotals() {
     var totalIncome = 0;
     var totalExpenses = 0;
 
     for (var i = 0; i < appData.transactions.length; i++) {
         var t = appData.transactions[i];
-        if (t.type === 'income') {
-            totalIncome = totalIncome + t.amount;
+        if (t.incExp === 'income') {
+            totalIncome = totalIncome + Number(t.amount);
         } else {
-            totalExpenses = totalExpenses + t.amount;
+            totalExpenses = totalExpenses + Number(t.amount);
         }
     }
 
@@ -57,25 +49,22 @@ function calculateTotals() {
     };
 }
 
-// Update insights
 function updateInsights() {
     var totals = calculateTotals();
     var savingsRate = totals.income > 0 ? Math.round(((totals.income - totals.expenses) / totals.income) * 100) : 0;
     var healthScore = Math.min(100, Math.round(savingsRate * 1.5));
 
-    // Calculate spending by category
     var categories = {};
     for (var i = 0; i < appData.transactions.length; i++) {
         var t = appData.transactions[i];
-        if (t.type === 'expense') {
+        if (t.incExp === 'expense') {
             if (!categories[t.category]) {
                 categories[t.category] = 0;
             }
-            categories[t.category] = categories[t.category] + t.amount;
+            categories[t.category] = categories[t.category] + Number(t.amount);
         }
     }
 
-    // Find top category
     var topCat = 'None';
     var topAmount = 0;
     for (var cat in categories) {
@@ -91,12 +80,10 @@ function updateInsights() {
     document.getElementById('health-score').textContent = healthScore + '/100';
     document.getElementById('savings-rate').textContent = savingsRate + '%';
 
-    // Prediction (simple estimate)
     var prediction = Math.round(totals.expenses * 1.2);
     document.getElementById('prediction').textContent = 'Next month prediction: ₹' + formatNumber(prediction);
 }
 
-// Analyze finances (AI simulation)
 function analyzeFinances() {
     var btn = document.querySelector('.btn-analyze');
     btn.textContent = 'Analyzing...';
@@ -109,22 +96,19 @@ function analyzeFinances() {
         var totals = calculateTotals();
         var savingsRate = totals.income > 0 ? Math.round(((totals.income - totals.expenses) / totals.income) * 100) : 0;
 
-        // Generate recommendations based on data
         var recommendations = [];
 
-        // Calculate spending by category
         var categories = {};
         for (var i = 0; i < appData.transactions.length; i++) {
             var t = appData.transactions[i];
-            if (t.type === 'expense') {
+            if (t.incExp === 'expense') {
                 if (!categories[t.category]) {
                     categories[t.category] = 0;
                 }
-                categories[t.category] = categories[t.category] + t.amount;
+                categories[t.category] = categories[t.category] + Number(t.amount);
             }
         }
 
-        // Find top category
         var topCat = 'None';
         var topAmount = 0;
         for (var cat in categories) {
@@ -171,5 +155,4 @@ function analyzeFinances() {
     }, 1500);
 }
 
-// Load data when page loads
 loadData();

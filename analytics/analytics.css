@@ -28,7 +28,6 @@ body {
     line-height: 1.6;
 }
 
-/* Header */
 .header {
     display: flex;
     align-items: center;
@@ -93,7 +92,6 @@ body {
     cursor: pointer;
 }
 
-/* Page */
 .page {
     padding: 30px 40px;
     max-width: 1400px;
@@ -119,7 +117,6 @@ body {
     font-size: 14px;
 }
 
-/* Stats Grid */
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -185,7 +182,6 @@ body {
     margin-top: 5px;
 }
 
-/* Cards */
 .card {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -193,7 +189,6 @@ body {
     padding: 25px;
 }
 
-/* Charts */
 .charts-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -215,7 +210,6 @@ body {
     position: relative;
 }
 
-/* Responsive */
 @media (max-width: 1200px) {
     .charts-grid {
         grid-template-columns: 1fr;
