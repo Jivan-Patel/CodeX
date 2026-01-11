@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./Navbar/style.css">
+</head>
+
+<body>
+    <nav class="finance-nav">
+        <div class="nav-brand">
+            <div class="brand-icon">
+                <i class="ri-wallet-3-line"></i>
+            </div>
+            <span class="brand-name">FinanceAI</span>
+        </div>
+
+        <ul class="nav-menu" id="nav-menu">
+            <li class="nav-item"><a href="./index.html" class="nav-link">Dashboard</a></li>
+            <li class="nav-item"><a href="./transection/transection.html" class="nav-link">Add Expense</a></li>
+            <li class="nav-item"><a href="./goal/goal.html" class="nav-link">Goals</a></li>
+            <li class="nav-item"><a href="./analytics/index.html" class="nav-link">Analytics</a></li>
+            <li class="nav-item"><a href="./analyze/analyze.html" class="nav-link">AI Insights</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <button class="theme-btn">
+                <i class="ri-sun-line"></i>
+            </button>
+
+            <button class="hamburger-btn" id="hamburger-btn">
+                <i class="ri-menu-line"></i>
+            </button>
+        </div>
+    </nav>
+    <script src="./Navbar/script.js"></script>
+    <main>
+        <div class="dashboard-container">
+            <header class="header">
+                <h1>Welcome back! 👋</h1>
+            </header>
+            <section class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="card-top">
+                        <span class="card-label">Income</span>
+                        <div class="icon-box icon-purple">
+                            <i class="ri-bar-chart-line"></i>
+                        </div>
+                    </div>
+                    <div class="card-value" id="monthInc">
+                        Loading...
+                    </div>
+                    <span class="card-subtext">This month</span>
+                </div>
+
+                <div class="stat-card">
+                    <div class="card-top">
+                        <span class="card-label">Expenses</span>
+                        <div class="icon-box icon-orange">
+                            <i class="ri-bar-chart-grouped-line"></i>
+                        </div>
+                    </div>
+                    <div class="card-value" id="monthExp">
+                        Loading...
+                    </div>
+                    <span class="card-subtext">This month</span>
+                </div>
+
+                <div class="stat-card">
+                    <div class="card-top">
+                        <span class="card-label">Balance</span>
+                        <div class="icon-box icon-green">
+                            <i class="ri-wallet-3-line"></i>
+                        </div>
+                    </div>
+                    <div class="card-value" id="totalBalance">
+                        Loading...
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="card-top">
+                        <span class="card-label">Health Score</span>
+                        <div class="icon-box icon-teal">
+                            <i class="ri-heart-line"></i>
+                        </div>
+                    </div>
+                    <div class="card-value" id="healthScore">
+                        Loading...
+                    </div>
+                    <span class="card-subtext" id="healthStatus">Calculating...</span>
+                </div>
+            </section>
+
+            <section class="seeTrans card">
+                <div class="seeHead">
+                    <h3>Recent Transactions</h3>
+                </div>
+                <div class="seeTransCardContainer">
+                    <div class="seeTransCard"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="./index.js"></script>
+</body>
+
+</html>

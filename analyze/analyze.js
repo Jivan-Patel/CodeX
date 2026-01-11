@@ -1,5 +1,8 @@
+const cardDisplay = document.querySelector("#cardId")
+const analyzeBtn = document.querySelector("#analyze-btn");
 
-document.addEventListener("DOMContentLoaded", function () {
+analyzeBtn.addEventListener("click", function () {
+
   const analyzeBtn = document.querySelector(".primary-btn");
 
   const topSpendingCategory = document.getElementById("topSpendingCategory");
@@ -10,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const healthStatus = document.getElementById("healthStatus");
   const savingsRate = document.getElementById("savingsRate");
   const savingsStatus = document.getElementById("savingsStatus");
+
 
   function getTransactions() {
     return JSON.parse(localStorage.getItem("transactions")) || [];
@@ -148,8 +152,8 @@ document.addEventListener("DOMContentLoaded", function () {
         trendData.trend === "Decreasing"
           ? "success"
           : trendData.trend === "Increasing"
-          ? "danger"
-          : "";
+            ? "danger"
+            : "";
     }
     if (trendPrediction)
       trendPrediction.textContent = `Next month prediction: ₹${trendData.prediction.toLocaleString()}`;
@@ -183,6 +187,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     updateUI(transactions);
   }
+
+  
+  cardDisplay.style.display="flex";
 
   // Button click handler
   if (analyzeBtn) {

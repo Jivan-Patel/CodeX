@@ -9,6 +9,11 @@ body {
   background: radial-gradient(circle at top, #2b1f4d, #0f1023);
   color: #ffffff;
   min-height: 100vh;
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .container {

@@ -1,10 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.finance-nav {
+.finance-nav{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -12,9 +6,12 @@
     text-decoration: none;
     list-style: none;
     margin: auto;
-}
-
-.finance-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -22,9 +19,6 @@
     padding: 0 24px;
     height: 70px;
     border-bottom: 1px solid #30363d;
-    position: relative;
-    z-index: 1000;
-    width: 100%;
 }
 
 .nav-brand {
@@ -57,7 +51,7 @@
     display: flex;
     gap: 32px;
     align-items: center;
-    list-style-type: none;
+    list-style-type:none;
 }
 
 .nav-link {
@@ -65,8 +59,9 @@
     color: #8b949e;
     font-weight: 500;
     transition: color 0.3s ease;
-    text-decoration: none;
-    list-style: none;
+    text-decoration:none;
+    list-style:none;
+
     transition: all 0.2s ease-in-out;
 }
 
@@ -75,11 +70,10 @@
     border-bottom: 3px solid #825EF5;
 }
 
-.nav-link:focus {
+.nav-link:focus{
     color: #e5e7eb;
     border-bottom: 2px solid #825EF5;
 }
-
 .nav-actions {
     display: flex;
     align-items: center;
@@ -116,8 +110,8 @@
     padding: 4px;
 }
 
-.lined {
-    border-bottom: 3px solid red;
+.lined{
+    border-bottom:3px solid red;
 }
 
 @media (max-width: 768px) {
@@ -131,7 +125,7 @@
 
     .nav-menu {
         position: absolute;
-        top: 70px;
+        top: 70px; 
         left: 0;
         width: 100%;
         background-color: #161b22;
@@ -145,24 +139,23 @@
     }
 
     .nav-menu.show {
-        max-height: 300px;
+        max-height: 300px; 
     }
 
     .nav-item {
         width: 100%;
         border-top: 1px solid #21262d;
-        text-decoration: none;
-        list-style-type: none;
+        text-decoration:none;
+       list-style-type:none;
     }
-
+    
     .nav-link {
         display: block;
         padding: 16px 20px;
         text-align: center;
-        list-style-type: none;
+       list-style-type:none;
     }
-
     .nav-link:hover {
         background-color: #21262d;
-    }
+    }   
 }

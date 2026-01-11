@@ -12,9 +12,39 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
         rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../Navbar/style.css">
 </head>
 
 <body>
+    
+  <nav class="finance-nav">
+    <div class="nav-brand">
+      <div class="brand-icon">
+        <i class="ri-wallet-3-line"></i>
+      </div>
+      <span class="brand-name">FinanceAI</span>
+    </div>
+
+    <ul class="nav-menu" id="nav-menu">
+      <li class="nav-item"><a href="../index.html" class="nav-link">Dashboard</a></li>
+      <li class="nav-item"><a href="../transection/transection.html" class="nav-link">Add Expense</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Goals</a></li>
+      <li class="nav-item"><a href="../analytics/index.html" class="nav-link">Analytics</a></li>
+      <li class="nav-item"><a href="../analyze/analyze.html" class="nav-link">AI Insights</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="theme-btn">
+        <i class="ri-sun-line"></i>
+      </button>
+
+      <button class="hamburger-btn" id="hamburger-btn">
+        <i class="ri-menu-line"></i>
+      </button>
+    </div>
+  </nav>
+  <script src="./Navbar/script.js"></script>
+
     <!-- Toast Notification -->
     <div class="toast" id="toast">
         <span class="toast-icon"></span>
@@ -35,15 +65,6 @@
     </div>
 
     <main>
-        <!-- Navigation Header -->
-        <nav class="nav-header">
-            <a href="../dashboard/dashboard.html" class="nav-link">
-                <i class="ri-dashboard-line"></i> Dashboard
-            </a>
-            <a href="../analyze/analyze.html" class="nav-link">
-                <i class="ri-brain-line"></i> AI Analyze
-            </a>
-        </nav>
 
         <h2 class="head">Transactions</h2>
         <h5 class="subHead">Track your income and expenses</h5>
